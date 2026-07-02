@@ -1,0 +1,51 @@
+.scroll-stack-scroller {
+  position: relative;
+  width: 100%;
+  overflow: visible;
+  background: #ffffff;
+}
+
+.scroll-stack-inner {
+  --card-inset: clamp(20px, 1.7vw, 34px);
+  --card-step: clamp(46px, 3.6vw, 78px);
+  --card-height: clamp(520px, 76vh, 760px);
+  --card-peek: clamp(68px, 9vh, 92px);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 var(--card-inset) 120px;
+}
+
+.scroll-stack-card {
+  position: sticky;
+  top: calc(140px + (var(--stack-index) * var(--card-peek)));
+  width: calc(100% - (var(--stack-reverse-index) * var(--card-step)));
+  height: var(--card-height);
+  margin: 0 0 100vh 0; /* Add margin-bottom so we have plenty of scroll room */
+  overflow: hidden;
+  border-radius: 8px;
+  background: #111111;
+  box-shadow: none;
+  transform: translate3d(0, 0, 0);
+  transform-origin: top center;
+  isolation: isolate;
+}
+
+.scroll-stack-card:last-child {
+  margin-bottom: 0;
+}
+
+@media (max-width: 767px) {
+  .scroll-stack-inner {
+    --card-inset: 12px;
+    --card-step: 18px;
+    --card-height: 68vh;
+    --card-peek: 64px;
+    padding-bottom: 96px;
+  }
+
+  .scroll-stack-card {
+    min-height: 440px;
+  }
+}
