@@ -23,6 +23,8 @@ export function Reveal({
 }: RevealProps) {
   const ref = useRef<HTMLElement | null>(null);
   const [visible, setVisible] = useState(false);
+  // Track whether the animation has fully finished so we can drop will-change
+  const [done, setDone] = useState(false);
 
   useEffect(() => {
     const el = ref.current;
@@ -35,6 +37,7 @@ export function Reveal({
             if (once) io.unobserve(e.target);
           } else if (!once) {
             setVisible(false);
+            setDone(false);
           }
         });
       },
@@ -54,7 +57,11 @@ export function Reveal({
         transform: visible ? "translate3d(0,0,0)" : `translate3d(0,${y}px,0)`,
         transition: `opacity ${duration}s ease, transform ${duration}s ease`,
         transitionDelay: `${delay}s`,
-        willChange: "opacity, transform",
+        // Apply will-change only while animating, remove it once done
+        willChange: done ? "auto" : "opacity, transform",
+      }}
+      onTransitionEnd={() => {
+        if (visible) setDone(true);
       }}
     >
       {children}

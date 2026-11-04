@@ -2,6 +2,7 @@ import { useState } from "react";
 import videoSrc from "@/assets/video2.mp4";
 import { Reveal } from "@/components/Reveal";
 import { RollingNumber } from "@/components/RollingNumber";
+import { BRAND_NAME } from "@/config/brand";
 
 export function About() {
   return (
@@ -42,7 +43,7 @@ export function About() {
           <div className="flex flex-col justify-center">
             <Reveal as="p" delay={0.1} className="font-sans text-[18px] leading-[1.7] max-w-[560px]">
               <span className="font-bold text-[#111111]">
-                KAPDA CASA blends Mediterranean tradition with modern elegance.
+                {BRAND_NAME} blends Mediterranean tradition with modern elegance.
               </span>{" "}
               <span className="font-normal text-[#888888]">
                 Born from a love of craft and culture, our collections celebrate

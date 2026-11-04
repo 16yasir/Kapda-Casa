@@ -8,17 +8,21 @@ import { BestSellers } from "@/components/BestSellers";
 import { ShopNow } from "@/components/ShopNow";
 import { Footer } from "@/components/Footer";
 import { CustomCursor } from "@/components/CustomCursor";
+import {
+  BRAND_TITLE,
+  BRAND_META_DESCRIPTION,
+  BRAND_OG_TITLE,
+} from "@/config/brand";
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "KAPDA CASA — Women's Fashion & Mediterranean Home Textiles" },
+      { title: BRAND_TITLE },
       {
         name: "description",
-        content:
-          "KAPDA CASA crafts editorial women's fashion and decorative home textiles inspired by the Mediterranean and Morocco.",
+        content: BRAND_META_DESCRIPTION,
       },
-      { property: "og:title", content: "KAPDA CASA" },
+      { property: "og:title", content: BRAND_OG_TITLE },
       {
         property: "og:description",
         content:
