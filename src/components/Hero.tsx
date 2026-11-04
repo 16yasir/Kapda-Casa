@@ -1,7 +1,6 @@
 import { useEffect, useRef } from "react";
 import heroImage from "@/assets/hero.jpg";
 import heroVideo from "@/assets/hero.mp4";
-import { BRAND_NAME, BRAND_PART_1, BRAND_PART_2 } from "@/config/brand";
 
 export function Hero() {
   const mediaRef = useRef<HTMLVideoElement | null>(null);
@@ -49,33 +48,31 @@ export function Hero() {
         <p>Est. 2020</p>
       </div>
 
-      {/* FĻA — top-left */}
+      {/* KAPDA — top-left */}
       <h1
-        aria-label={BRAND_NAME}
+        aria-label="KAPDA CASA"
         className="absolute top-[18vh] md:top-[15vh] left-4 md:left-10 font-display font-medium text-white/85 leading-[0.85] select-none pointer-events-none"
         style={{
           fontSize: "clamp(64px, 16vw, 240px)",
           letterSpacing: "-0.02em",
-          overflow: "visible",
         }}
       >
-        {BRAND_PART_1}
+        KAPDA
       </h1>
 
-      {/* SENORÃ — bottom-right on desktop, bottom-left on mobile */}
+      {/* CASA — bottom-right on desktop, bottom-left on mobile */}
       <span
         aria-hidden="true"
         className="absolute bottom-[8vh] md:bottom-[6vh] left-4 md:left-auto md:right-10 font-display font-medium text-white/85 leading-[0.85] select-none pointer-events-none"
         style={{
           fontSize: "clamp(64px, 16vw, 240px)",
           letterSpacing: "-0.02em",
-          overflow: "visible",
         }}
       >
-        {BRAND_PART_2}
+        CASA
       </span>
 
-      {/* Bottom-left tagline (desktop only — on mobile SENORÃ occupies this corner) */}
+      {/* Bottom-left tagline (desktop only — on mobile CASA occupies this corner) */}
       <p className="hidden md:block absolute bottom-10 left-10 text-white font-sans font-normal text-[13px] tracking-[0.2em] text-left">
         Craft. Culture. Cloth.
       </p>

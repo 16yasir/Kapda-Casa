@@ -1,5 +1,4 @@
 import { ArrowRight } from "lucide-react";
-import { BRAND_NAME } from "@/config/brand";
 
 const navLinks = [
   "Collections",
@@ -18,7 +17,7 @@ export function Footer() {
           {/* Left */}
           <div>
             <p className="font-display text-[24px] font-bold tracking-tight text-white">
-              {BRAND_NAME}
+              KAPDA CASA
             </p>
             <p className="mt-3 text-[14px] text-[#F5F0E8]">
               Mediterranean craft for the modern woman.
@@ -85,7 +84,7 @@ export function Footer() {
 
         {/* Bottom */}
         <div className="mt-6 flex flex-col items-start justify-between gap-3 text-[11px] text-[#F5F0E8] md:flex-row md:items-center">
-          <p>© 2025 {BRAND_NAME}. All rights reserved.</p>
+          <p>© 2025 KAPDA CASA. All rights reserved.</p>
           <p className="italic">Designed & built by Mohd Yasir Salmani</p>
         </div>
       </div>
@@ -97,7 +96,7 @@ export function Footer() {
       >
         <p className="whitespace-nowrap text-center font-display font-bold leading-none text-white opacity-[0.08]"
            style={{ fontSize: "clamp(80px, 17vw, 260px)", letterSpacing: "-0.02em" }}>
-          {BRAND_NAME}
+          KAPDA CASA
         </p>
       </div>
     </footer>

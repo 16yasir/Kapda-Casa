@@ -9,7 +9,6 @@ import bestHome from "@/assets/best-home.jpg";
 import product8 from "@/assets/product-8.jpg";
 import bestDresses from "@/assets/best-dresses.jpg";
 import bestLinen from "@/assets/best-linen.jpg";
-import { BRAND_NAME } from "@/config/brand";
 
 type CategoryKey = "women" | "textiles" | "about" | "contact";
 
@@ -50,7 +49,7 @@ const categories: Category[] = [
       { num: "01", name: "THE BRAND" },
       { num: "02", name: "EDITORIAL" },
     ],
-    items: ["WE ARE FĻA SENORÃ", "JOURNAL", "LOOKBOOK", "CONTACT FORM"],
+    items: ["WE ARE KAPDA CASA", "JOURNAL", "LOOKBOOK", "CONTACT FORM"],
     images: [bestDresses, bestLinen],
   },
   {
@@ -153,7 +152,7 @@ export function Navbar() {
               pointerEvents: showLogo ? "auto" : "none",
             }}
           >
-            {BRAND_NAME}
+            KAPDA CASA
           </Link>
 
           {/* Right: icons */}

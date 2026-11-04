@@ -25,14 +25,13 @@ export function CustomCursor() {
 
     const render = () => {
       dot.style.transform = `translate3d(${x}px, ${y}px, 0) translate(-50%, -50%)`;
-      raf = 0; // frame consumed — do not re-queue until next mousemove
+      raf = requestAnimationFrame(render);
     };
+    raf = requestAnimationFrame(render);
 
     const onMove = (e: MouseEvent) => {
       x = e.clientX;
       y = e.clientY;
-      // Only schedule a frame if one is not already pending
-      if (!raf) raf = requestAnimationFrame(render);
     };
     const isInteractive = (el: Element | null) =>
       !!el?.closest(
@@ -69,7 +68,6 @@ export function CustomCursor() {
         opacity: hovering ? 0.5 : 1,
         pointerEvents: "none",
         zIndex: 9999,
-        willChange: "transform",
         transition:
           "width 0.25s ease, height 0.25s ease, opacity 0.25s ease, background 0.25s ease",
         mixBlendMode: "normal",
